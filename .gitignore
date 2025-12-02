@@ -1,0 +1,47 @@
+# Byte-code files
+*.pyc
+__pycache__/
+*.egg-info/
+*.egg
+
+# Virtual environment
+venv/
+.venv/
+env/
+.env/
+
+# Database
+*.sqlite3
+db.sqlite3
+
+# Media files
+media/
+
+# Static files (collected during deployment)
+static/
+
+# Environment variables
+.env
+.env.*
+
+# Editor-specific files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Test files
+.pytest_cache/
+
+# Coverage files
+.coverage
+htmlcov/
+
+# Python-specific files
+celerybeat-schedule
+celeryd.pid
