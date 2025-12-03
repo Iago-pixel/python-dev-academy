@@ -5,13 +5,11 @@ from python_dev_academy import settings
 
 
 class Student(AbstractUser):
-    registration_number = models.CharField(max_length=20, null=True, unique=True)
-
     class Meta:
-        ordering = ["first_name", "last_name", "registration_number"]
+        ordering = ["first_name", "last_name"]
 
     def __str__(self):
-        return self.registration_number + " " + self.first_name + " " + self.last_name
+        return self.first_name + " " + self.last_name
 
 
 class Course(models.Model):
