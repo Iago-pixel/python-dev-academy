@@ -5,7 +5,7 @@ from python_dev_academy import settings
 
 
 class Student(AbstractUser):
-    registration_number = models.CharField(max_length=20, unique=True)
+    registration_number = models.CharField(max_length=20, null=True, unique=True)
 
     class Meta:
         ordering = ["first_name", "last_name", "registration_number"]
