@@ -6,10 +6,7 @@ from python_dev_academy import settings
 
 class Student(AbstractUser):
     class Meta:
-        ordering = ["first_name", "last_name"]
-
-    def __str__(self):
-        return self.first_name + " " + self.last_name
+        ordering = ["first_name", "last_name", "id"]
 
 
 class Course(models.Model):
@@ -18,7 +15,7 @@ class Course(models.Model):
     students = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="courses")
 
     class Meta:
-        ordering = ["title"]
+        ordering = ["title", "id"]
 
     def __str__(self):
         return self.title
