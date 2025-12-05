@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Lista de cursos</h1>
-<ul>
-  {% for course in course_list %}
-    <li><a href="#">{{ course.title }}</a></li>
-  {% empty %}
-    <li>Nenhum curso disponível no momento.</li>
-  {% endfor %}
-</ul>
+  <h1>Lista de cursos</h1>
+  <ul>
+    {% for course in course_list %}
+      <li><a href="{{ course.get_absolute_url }}">{{ course.title }}</a></li>
+    {% empty %}
+      <li>Nenhum curso disponível no momento.</li>
+    {% endfor %}
+  </ul>
 {% endblock %}

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.urls import reverse
 
 from python_dev_academy import settings
 
@@ -19,3 +20,6 @@ class Course(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse("registrations:course-detail", args=[str(self.id)])
