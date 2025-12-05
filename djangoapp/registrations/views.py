@@ -9,4 +9,4 @@ def index(request):
         "num_courses": num_courses,
         "num_students": num_students,
     }
-    return render(request=request, template_name="registrations/index.html", context=context)
+    return render(request=request, template_name="index.html", context=context)
