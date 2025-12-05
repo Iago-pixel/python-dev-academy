@@ -4,7 +4,7 @@
 <h1>Lista de cursos</h1>
 <ul>
   {% for course in course_list %}
-    <li>{{ course.title }}</li>
+    <li><a href="#">{{ course.title }}</a></li>
   {% empty %}
     <li>Nenhum curso disponível no momento.</li>
   {% endfor %}
