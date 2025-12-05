@@ -9,6 +9,9 @@ class Student(AbstractUser):
     class Meta:
         ordering = ["first_name", "last_name", "id"]
 
+    def get_absolute_url(self):
+        return reverse("registrations:student-detail", args=[str(self.id)])
+
 
 class Course(models.Model):
     title = models.CharField(max_length=200)

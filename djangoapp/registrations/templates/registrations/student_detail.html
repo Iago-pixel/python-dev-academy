@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ student.first_name }} {{ student.last_name }}</h1>
+  <p><strong>Matrícula:</strong> {{ student.id }}</p>
+  <p><strong>Email:</strong> {{ student.email }}</p>
+  <p><strong>Username:</strong> {{ student.username }}</p>
+  <div class="ml-3">
+    <h3>Cursos inscritos:</h3>
+    {% for course in student.courses.all %}
+      <p class="text-muted">{{ course.id }}</p>
+      <p>
+        <a href="{{ course.get_absolute_url }}">{{ course.title }}</a>
+      </p>
+    {% empty %}
+      <p>Sem cursos inscritos</p>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -15,7 +15,18 @@ def index(request):
 
 class CourseListView(generic.ListView):
     model = Course
+    paginate_by = 10
 
 
 class CourseDetailView(generic.DetailView):
     model = Course
+
+
+class StudentListView(generic.ListView):
+    model = Student
+    paginate_by = 10
+
+
+class StudentDetailView(generic.DetailView):
+    model = Student
+
