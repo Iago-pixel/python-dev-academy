@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <title>Academia Dev Python</title>
-  </head>
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3">
-          <ul>
-            <li>
-              <a href="{% url 'registrations:index' %}">Página principal</a>
-            </li>
-            <li>
-              <a href="#">Estudantes inscritos</a>
-            </li>
-            <li>
-              <a href="#">Lista de cursos</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm-9">
-          <h1>Bem-vindo a Academia Dev Python</h1>
-          <p>Bem-vindo a nossa plataforma de matrículas de cursos pyhton</p>
-          <h3>Nossos registros:</h3>
-          <ul>
-            <li>Número de cursos disponíveis: {{ num_courses }}</li>
-            <li>Número de estudantes: {{ num_students }}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Bem-vindo a Academia Dev Python</h1>
+  <p>Bem-vindo a nossa plataforma de matrículas de cursos pyhton</p>
+  <h3>Nossos registros:</h3>
+  <ul>
+    <li>Número de cursos disponíveis: {{ num_courses }}</li>
+    <li>Número de estudantes: {{ num_students }}</li>
+  </ul>
+{% endblock %}
