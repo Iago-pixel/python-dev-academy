@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Lista de cursos</h1>
 <ul>
-  {% for course in courses %}
+  {% for course in course_list %}
     <li>{{ course.title }}</li>
   {% empty %}
     <li>Nenhum curso disponível no momento.</li>
