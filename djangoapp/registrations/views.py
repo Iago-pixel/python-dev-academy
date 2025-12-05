@@ -10,3 +10,10 @@ def index(request):
         "num_students": num_students,
     }
     return render(request=request, template_name="index.html", context=context)
+
+def course_list(request):
+    courses = Course.objects.all()
+    context = {
+        "courses": courses,
+    }
+    return render(request=request, template_name="course_list.html", context=context)
