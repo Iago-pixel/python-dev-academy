@@ -1,0 +1,27 @@
+<ul class="sidebar-nav">
+  {% if user.is_authenticated %}
+    <li>
+      Usuário: {{ user.username }}
+    </li>
+    <li>
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Sair</button>
+      </form>
+    </li>
+  {% else %}
+    <li>
+      <a href="{% url 'login' %}">Entrar</a>
+    </li>
+  {% endif %}
+  <br>
+  <li>
+    <a href="{% url 'registrations:index' %}">Página principal</a>
+  </li>
+  <li>
+    <a href="{% url 'registrations:student-list' %}">Estudantes inscritos</a>
+  </li>
+  <li>
+    <a href="{% url 'registrations:course-list' %}">Lista de cursos</a>
+  </li>
+</ul>

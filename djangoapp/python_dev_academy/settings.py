@@ -57,7 +57,7 @@ ROOT_URLCONF = "python_dev_academy.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -133,3 +133,5 @@ AUTH_USER_MODEL = "registrations.Student"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+LOGIN_REDIRECT_URL = "/"
