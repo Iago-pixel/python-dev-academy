@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Deletar curso</h1>
+  <p>Você tem certeza que deseja deletar o curso: {{ course }}</p>
+  <form method="post" action="">
+    {% csrf_token %}
+    <input type="submit" value="Sim, deletar" class="btn btn-danger">
+  </form>
+{% endblock %}

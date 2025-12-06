@@ -33,6 +33,19 @@ class CourseCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy('registrations:course-list')
 
 
+class CourseUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Course
+    fields = "__all__"
+    template_name = 'registrations/course_form.html'
+    success_url = reverse_lazy('registrations:course-list')
+
+
+class CourseDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Course
+    template_name = 'registrations/course_confirm_delete.html'
+    success_url = reverse_lazy('registrations:course-list')
+
+
 class StudentListView(LoginRequiredMixin, generic.ListView):
     model = Student
     paginate_by = 10

@@ -2,12 +2,27 @@
 
 {% block content %}
   <h1>Lista de cursos <a style="float: right;" href="{% url 'registrations:course-create' %}">+</a></h1>
-  <ul>
-    {% for course in course_list %}
-      <li><a href="{{ course.get_absolute_url }}">{{ course.title }}</a></li>
-    {% empty %}
-      <li>Nenhum curso disponível no momento.</li>
-    {% endfor %}
-  </ul>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Título do Curso</th>
+        <th>Atualizar</th>
+        <th>Deletar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for course in course_list %}
+      <tr>
+        <td><a href="{{ course.get_absolute_url }}">{{ course.title }}</a></td>
+        <td><a href="{% url 'registrations:course-update' course.pk %}">Atualizar</a></td>
+        <td><a href="{% url 'registrations:course-delete' course.pk %}">Deletar</a></td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="3">Nenhum curso disponível no momento.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
   
 {% endblock %}
