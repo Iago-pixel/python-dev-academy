@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 
 from .models import Course, Student
+from .forms import StudentRegistrationForm
 
 @login_required
 def index(request):
@@ -53,3 +54,10 @@ class StudentListView(LoginRequiredMixin, generic.ListView):
 
 class StudentDetailView(LoginRequiredMixin, generic.DetailView):
     model = Student
+
+
+class StudentCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Student
+    form_class = StudentRegistrationForm
+    template_name = 'registrations/student_form.html'
+    success_url = reverse_lazy('registrations:student-list')
