@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
 from .models import Course, Student
 
@@ -23,6 +24,13 @@ class CourseListView(LoginRequiredMixin, generic.ListView):
 
 class CourseDetailView(LoginRequiredMixin, generic.DetailView):
     model = Course
+
+
+class CourseCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Course
+    fields = "__all__"
+    template_name = 'registrations/course_form.html'
+    success_url = reverse_lazy('registrations:course-list')
 
 
 class StudentListView(LoginRequiredMixin, generic.ListView):
